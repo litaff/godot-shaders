@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dmvrracwfkfoq"]
 
 [ext_resource type="Material" uid="uid://c64oerir0l8ub" path="res://materials/cel-shading-post-process.tres" id="1_4yfwd"]
-[ext_resource type="Shader" path="res://shaders/edge-detection-post-process.gdshader" id="1_khxra"]
+[ext_resource type="Shader" uid="uid://mk8joywcbvj5" path="res://shaders/sobol_edge_detection.gdshader" id="1_khxra"]
 
 [resource]
 render_priority = 0

@@ -1,6 +1,7 @@
-[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://c64oerir0l8ub"]
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://c64oerir0l8ub"]
 
-[ext_resource type="Shader" path="res://shaders/cel-shading-post-process.gdshader" id="1_3pr5w"]
+[ext_resource type="Material" uid="uid://r2wqtuiy0mt5" path="res://materials/outline.tres" id="1_ft2tp"]
+[ext_resource type="Shader" uid="uid://egfjk1ng7o8p" path="res://shaders/cel-shader.gdshader" id="2_4bm16"]
 
 [sub_resource type="Gradient" id="Gradient_oxhk5"]
 interpolation_mode = 1
@@ -12,5 +13,6 @@ gradient = SubResource("Gradient_oxhk5")
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_3pr5w")
+next_pass = ExtResource("1_ft2tp")
+shader = ExtResource("2_4bm16")
 shader_parameter/GRAYSCALE_TEXTURE = SubResource("GradientTexture1D_mjw47")

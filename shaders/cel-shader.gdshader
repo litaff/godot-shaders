@@ -6,7 +6,7 @@ uniform sampler2D NORMAL_TEXTURE : hint_normal_roughness_texture, filter_linear_
 uniform sampler2D GRAYSCALE_TEXTURE : repeat_disable;
 
 void vertex(){
-	POSITION = vec4(VERTEX, 1.0);
+
 }
 
 void fragment() {

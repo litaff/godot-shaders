@@ -1,9 +1,0 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://e6mfyiqodii8"]
-
-[ext_resource type="Shader" path="res://shaders/cavity_detection.gdshader" id="1_sgd3c"]
-
-[resource]
-render_priority = 0
-shader = ExtResource("1_sgd3c")
-shader_parameter/intensity = 2.19
-shader_parameter/bias = 0.505
