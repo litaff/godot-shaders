@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=3 uid="uid://be0xs5hagfm8j"]
+
+[ext_resource type="Material" uid="uid://ct2o85aarf80u" path="res://pixelated_outlined_cel_shaded/outlined_cel_post_process.tres" id="1_a2ho7"]
+[ext_resource type="PackedScene" uid="uid://iqvy3ieowle6" path="res://models/stanford_dragon_sss_test.glb" id="2_y8aqw"]
+[ext_resource type="Material" uid="uid://dfncjnytr0hc" path="res://materials/Scene_-_Root.tres" id="3_bqtlv"]
+[ext_resource type="PackedScene" uid="uid://dn2qa0iayhpin" path="res://models/suzzane.glb" id="4_b0mrj"]
+[ext_resource type="PackedScene" uid="uid://668sdvkbtf83" path="res://models/the_utah_teapot.glb" id="5_s4jcb"]
+
+[sub_resource type="Environment" id="Environment_jwggg"]
+ssao_radius = 0.01
+ssao_intensity = 23.45
+ssao_power = 1e+06
+
+[sub_resource type="QuadMesh" id="QuadMesh_3jt6t"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[node name="Main" type="Node3D"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 3
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(384, 216)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(-0.995159, 0, -0.0982776, 0, 1, 0, 0.0982776, 0, -0.995159, 0, 0.428155, -3.98131)
+environment = SubResource("Environment_jwggg")
+projection = 1
+current = true
+size = 5.457
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Camera3D"]
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_3jt6t")
+surface_material_override/0 = ExtResource("1_a2ho7")
+
+[node name="Sketchfab_Scene" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_y8aqw")]
+transform = Transform3D(-18.1962, 0, -8.30054, 0, 20, 0, 8.30054, 0, -18.1962, 0.791919, 0, 2.7194)
+
+[node name="Sketchfab_model" parent="SubViewportContainer/SubViewport/Sketchfab_Scene" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.999923, 0.0124353, 0, -0.0124353, 0.999923, -0.085, -0.129, -0.119)
+
+[node name="Object_2" parent="SubViewportContainer/SubViewport/Sketchfab_Scene/Sketchfab_model/Geode" index="0"]
+surface_material_override/0 = ExtResource("3_bqtlv")
+
+[node name="Object_3" parent="SubViewportContainer/SubViewport/Sketchfab_Scene/Sketchfab_model/Geode" index="1"]
+surface_material_override/0 = ExtResource("3_bqtlv")
+
+[node name="Object_4" parent="SubViewportContainer/SubViewport/Sketchfab_Scene/Sketchfab_model/Geode" index="2"]
+surface_material_override/0 = ExtResource("3_bqtlv")
+
+[node name="Object_5" parent="SubViewportContainer/SubViewport/Sketchfab_Scene/Sketchfab_model/Geode" index="3"]
+surface_material_override/0 = ExtResource("3_bqtlv")
+
+[node name="Object_6" parent="SubViewportContainer/SubViewport/Sketchfab_Scene/Sketchfab_model/Geode" index="4"]
+surface_material_override/0 = ExtResource("3_bqtlv")
+
+[node name="Object_7" parent="SubViewportContainer/SubViewport/Sketchfab_Scene/Sketchfab_model/Geode" index="5"]
+surface_material_override/0 = ExtResource("3_bqtlv")
+
+[node name="Object_8" parent="SubViewportContainer/SubViewport/Sketchfab_Scene/Sketchfab_model/Geode" index="6"]
+surface_material_override/0 = ExtResource("3_bqtlv")
+
+[node name="Object_9" parent="SubViewportContainer/SubViewport/Sketchfab_Scene/Sketchfab_model/Geode" index="7"]
+surface_material_override/0 = ExtResource("3_bqtlv")
+
+[node name="Object_10" parent="SubViewportContainer/SubViewport/Sketchfab_Scene/Sketchfab_model/Geode" index="8"]
+surface_material_override/0 = ExtResource("3_bqtlv")
+
+[node name="suzzane" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_b0mrj")]
+transform = Transform3D(-0.856565, 0, 0.51604, 0, 1, 0, -0.51604, 0, -0.856565, -2.73275, 0.560457, 0.411757)
+
+[node name="Suzanne" parent="SubViewportContainer/SubViewport/suzzane" index="0"]
+transform = Transform3D(0.996134, 0, -0.0878512, 0, 1, 0, 0.0878512, 0, 0.996134, 0, 0, 0)
+surface_material_override/0 = ExtResource("3_bqtlv")
+
+[node name="Sketchfab_Scene2" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_s4jcb")]
+transform = Transform3D(0.0155868, 0, -0.0125321, 0, 0.02, 0, 0.0125321, 0, 0.0155868, 0, 0, 0)
+
+[node name="Object_2" parent="SubViewportContainer/SubViewport/Sketchfab_Scene2/Sketchfab_model/teapot_obj_cleaner_materialmerger_gles" index="0"]
+surface_material_override/0 = ExtResource("3_bqtlv")
+
+[node name="Object_3" parent="SubViewportContainer/SubViewport/Sketchfab_Scene2/Sketchfab_model/teapot_obj_cleaner_materialmerger_gles" index="1"]
+transform = Transform3D(-0.97563, 0.219421, -4.87211e-17, -0.219421, -0.97563, 4.38678e-16, 4.87211e-17, 4.38678e-16, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("3_bqtlv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.660434, -0.620304, -0.423143, 0, -0.563526, 0.826098, -0.750884, -0.545584, -0.372172, 0, 0, 0)
+light_energy = 1.658
+
+[editable path="SubViewportContainer/SubViewport/Sketchfab_Scene"]
+[editable path="SubViewportContainer/SubViewport/suzzane"]
+[editable path="SubViewportContainer/SubViewport/Sketchfab_Scene2"]

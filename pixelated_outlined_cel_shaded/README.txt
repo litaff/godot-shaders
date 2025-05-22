@@ -1,0 +1,1 @@
+To pixelate the screen you need to move everything, that you want pixelated, under a SubViewport in a SubViewportContainer. Stretch the contrainer, set texture filtering to nearest and pixelate by modifing the Stretch Shrink value.
