@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bracmiygi3rys"]
+
+[resource]
+resource_name = "default"
+cull_mode = 2
+roughness = 0.9

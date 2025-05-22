@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dmvrracwfkfoq"]
+
+[ext_resource type="Material" uid="uid://c64oerir0l8ub" path="res://materials/cel-shading-post-process.tres" id="1_4yfwd"]
+[ext_resource type="Shader" path="res://shaders/edge-detection-post-process.gdshader" id="1_khxra"]
+
+[resource]
+render_priority = 0
+next_pass = ExtResource("1_4yfwd")
+shader = ExtResource("1_khxra")
+shader_parameter/edge_threshold = 0.01
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/sobel = Vector3(1, 2, 1)

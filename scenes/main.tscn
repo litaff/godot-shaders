@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://c7xfy3cl33umv"]
+
+[ext_resource type="PackedScene" uid="uid://iqvy3ieowle6" path="res://models/stanford_dragon_sss_test.glb" id="1_fa2ep"]
+[ext_resource type="PackedScene" uid="uid://dn2qa0iayhpin" path="res://models/suzzane.glb" id="2_7fwrr"]
+[ext_resource type="Material" uid="uid://dfncjnytr0hc" path="res://materials/Scene_-_Root.tres" id="2_xt116"]
+[ext_resource type="PackedScene" uid="uid://668sdvkbtf83" path="res://models/the_utah_teapot.glb" id="3_we1vw"]
+[ext_resource type="Material" uid="uid://c64oerir0l8ub" path="res://materials/cel-shading-post-process.tres" id="5_5we1g"]
+
+[sub_resource type="Environment" id="Environment_jwggg"]
+ssao_radius = 0.01
+ssao_intensity = 23.45
+ssao_power = 1e+06
+
+[sub_resource type="QuadMesh" id="QuadMesh_ij674"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[node name="Main" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.999952, 0.000159691, -0.00981502, -0.00327172, 0.937276, 0.348572, 0.00925505, 0.348587, -0.937231, -0.8, 0.871, -3.285)
+environment = SubResource("Environment_jwggg")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_fa2ep")]
+transform = Transform3D(-18.1962, 0, -8.30054, 0, 20, 0, 8.30054, 0, -18.1962, 0.791919, 0, 2.7194)
+
+[node name="Object_2" parent="Sketchfab_Scene/Sketchfab_model/Geode" index="0"]
+surface_material_override/0 = ExtResource("2_xt116")
+
+[node name="Object_3" parent="Sketchfab_Scene/Sketchfab_model/Geode" index="1"]
+surface_material_override/0 = ExtResource("2_xt116")
+
+[node name="Object_4" parent="Sketchfab_Scene/Sketchfab_model/Geode" index="2"]
+surface_material_override/0 = ExtResource("2_xt116")
+
+[node name="Object_5" parent="Sketchfab_Scene/Sketchfab_model/Geode" index="3"]
+surface_material_override/0 = ExtResource("2_xt116")
+
+[node name="Object_6" parent="Sketchfab_Scene/Sketchfab_model/Geode" index="4"]
+surface_material_override/0 = ExtResource("2_xt116")
+
+[node name="Object_7" parent="Sketchfab_Scene/Sketchfab_model/Geode" index="5"]
+surface_material_override/0 = ExtResource("2_xt116")
+
+[node name="Object_8" parent="Sketchfab_Scene/Sketchfab_model/Geode" index="6"]
+surface_material_override/0 = ExtResource("2_xt116")
+
+[node name="Object_9" parent="Sketchfab_Scene/Sketchfab_model/Geode" index="7"]
+surface_material_override/0 = ExtResource("2_xt116")
+
+[node name="Object_10" parent="Sketchfab_Scene/Sketchfab_model/Geode" index="8"]
+surface_material_override/0 = ExtResource("2_xt116")
+
+[node name="suzzane" parent="." instance=ExtResource("2_7fwrr")]
+transform = Transform3D(-0.707403, 0, 0.706811, 0, 1, 0, -0.706811, 0, -0.707403, -2.76734, 0, 0)
+
+[node name="Suzanne" parent="suzzane" index="0"]
+transform = Transform3D(0.996134, 0, -0.0878512, 0, 1, 0, 0.0878512, 0, 0.996134, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_xt116")
+
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("3_we1vw")]
+transform = Transform3D(0.00777761, 0, 0.00628561, 0, 0.01, 0, -0.00628561, 0, 0.00777761, -0.909304, -2.38419e-07, -2.00412)
+
+[node name="Object_2" parent="Sketchfab_Scene2/Sketchfab_model/teapot_obj_cleaner_materialmerger_gles" index="0"]
+surface_material_override/0 = ExtResource("2_xt116")
+
+[node name="Object_3" parent="Sketchfab_Scene2/Sketchfab_model/teapot_obj_cleaner_materialmerger_gles" index="1"]
+transform = Transform3D(-0.97563, 0.219421, -4.87211e-17, -0.219421, -0.97563, 4.38678e-16, 4.87211e-17, 4.38678e-16, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_xt116")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_ij674")
+surface_material_override/0 = ExtResource("5_5we1g")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.58364, 0.553234, 1.02072)
+light_color = Color(1, 0, 0, 1)
+light_energy = 16.0
+light_specular = 16.0
+shadow_enabled = true
+
+[editable path="Sketchfab_Scene"]
+[editable path="suzzane"]
+[editable path="Sketchfab_Scene2"]
