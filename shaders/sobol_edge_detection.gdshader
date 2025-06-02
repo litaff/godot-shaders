@@ -24,7 +24,7 @@ void fragment() {
 		vec3(0.0, 0.0, 0.0),
 		vec3(-sobel.x, -sobel.y, -sobel.z)
 	);
-	
+
 	vec2 uv = SCREEN_UV;
 	vec4 screen_color = texture(SCREEN_TEXTURE, uv);
 	vec3 normal = texture(NORMAL_TEXTURE, uv).rgb;

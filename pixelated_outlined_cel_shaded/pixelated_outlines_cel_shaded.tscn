@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://be0xs5hagfm8j"]
+[gd_scene load_steps=10 format=3 uid="uid://be0xs5hagfm8j"]
 
-[ext_resource type="Material" uid="uid://ct2o85aarf80u" path="res://pixelated_outlined_cel_shaded/outlined_cel_post_process.tres" id="1_a2ho7"]
+[ext_resource type="Material" uid="uid://ct2o85aarf80u" path="res://pixelated_outlined_cel_shaded/pixel_outline_post_process.tres" id="1_a2ho7"]
 [ext_resource type="PackedScene" uid="uid://iqvy3ieowle6" path="res://models/stanford_dragon_sss_test.glb" id="2_y8aqw"]
-[ext_resource type="Material" uid="uid://dfncjnytr0hc" path="res://materials/Scene_-_Root.tres" id="3_bqtlv"]
 [ext_resource type="PackedScene" uid="uid://dn2qa0iayhpin" path="res://models/suzzane.glb" id="4_b0mrj"]
 [ext_resource type="PackedScene" uid="uid://668sdvkbtf83" path="res://models/the_utah_teapot.glb" id="5_s4jcb"]
+[ext_resource type="PackedScene" uid="uid://ddbb7lphbl4ua" path="res://models/tree.glb" id="6_g5e0f"]
+[ext_resource type="Material" uid="uid://wtkbr8a3kwjj" path="res://materials/cel_shading.tres" id="6_hj4bq"]
+[ext_resource type="PackedScene" uid="uid://bano66lwyuejq" path="res://models/proto_gemling/proto_gemling.glb" id="7_g5e0f"]
 
 [sub_resource type="Environment" id="Environment_jwggg"]
 ssao_radius = 0.01
@@ -25,11 +27,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch = true
-stretch_shrink = 3
+stretch_shrink = 2
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(384, 216)
+size = Vector2i(576, 324)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
@@ -51,53 +53,130 @@ transform = Transform3D(-18.1962, 0, -8.30054, 0, 20, 0, 8.30054, 0, -18.1962, 0
 transform = Transform3D(1, 0, 0, 0, 0.999923, 0.0124353, 0, -0.0124353, 0.999923, -0.085, -0.129, -0.119)
 
 [node name="Object_2" parent="SubViewportContainer/SubViewport/Sketchfab_Scene/Sketchfab_model/Geode" index="0"]
-surface_material_override/0 = ExtResource("3_bqtlv")
+surface_material_override/0 = ExtResource("6_hj4bq")
 
 [node name="Object_3" parent="SubViewportContainer/SubViewport/Sketchfab_Scene/Sketchfab_model/Geode" index="1"]
-surface_material_override/0 = ExtResource("3_bqtlv")
+surface_material_override/0 = ExtResource("6_hj4bq")
 
 [node name="Object_4" parent="SubViewportContainer/SubViewport/Sketchfab_Scene/Sketchfab_model/Geode" index="2"]
-surface_material_override/0 = ExtResource("3_bqtlv")
+surface_material_override/0 = ExtResource("6_hj4bq")
 
 [node name="Object_5" parent="SubViewportContainer/SubViewport/Sketchfab_Scene/Sketchfab_model/Geode" index="3"]
-surface_material_override/0 = ExtResource("3_bqtlv")
+surface_material_override/0 = ExtResource("6_hj4bq")
 
 [node name="Object_6" parent="SubViewportContainer/SubViewport/Sketchfab_Scene/Sketchfab_model/Geode" index="4"]
-surface_material_override/0 = ExtResource("3_bqtlv")
+surface_material_override/0 = ExtResource("6_hj4bq")
 
 [node name="Object_7" parent="SubViewportContainer/SubViewport/Sketchfab_Scene/Sketchfab_model/Geode" index="5"]
-surface_material_override/0 = ExtResource("3_bqtlv")
+surface_material_override/0 = ExtResource("6_hj4bq")
 
 [node name="Object_8" parent="SubViewportContainer/SubViewport/Sketchfab_Scene/Sketchfab_model/Geode" index="6"]
-surface_material_override/0 = ExtResource("3_bqtlv")
+surface_material_override/0 = ExtResource("6_hj4bq")
 
 [node name="Object_9" parent="SubViewportContainer/SubViewport/Sketchfab_Scene/Sketchfab_model/Geode" index="7"]
-surface_material_override/0 = ExtResource("3_bqtlv")
+surface_material_override/0 = ExtResource("6_hj4bq")
 
 [node name="Object_10" parent="SubViewportContainer/SubViewport/Sketchfab_Scene/Sketchfab_model/Geode" index="8"]
-surface_material_override/0 = ExtResource("3_bqtlv")
+surface_material_override/0 = ExtResource("6_hj4bq")
 
 [node name="suzzane" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_b0mrj")]
-transform = Transform3D(-0.856565, 0, 0.51604, 0, 1, 0, -0.51604, 0, -0.856565, -2.73275, 0.560457, 0.411757)
+transform = Transform3D(-0.856565, 0, 0.51604, 0.131263, 0.967108, 0.217881, -0.499066, 0.254366, -0.828391, -2.73275, 0.560457, 0.411757)
 
 [node name="Suzanne" parent="SubViewportContainer/SubViewport/suzzane" index="0"]
 transform = Transform3D(0.996134, 0, -0.0878512, 0, 1, 0, 0.0878512, 0, 0.996134, 0, 0, 0)
-surface_material_override/0 = ExtResource("3_bqtlv")
+surface_material_override/0 = ExtResource("6_hj4bq")
 
 [node name="Sketchfab_Scene2" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_s4jcb")]
-transform = Transform3D(0.0155868, 0, -0.0125321, 0, 0.02, 0, 0.0125321, 0, 0.0155868, 0, 0, 0)
+transform = Transform3D(0.00294515, 0.00563924, -0.0189612, 0.0050094, 0.0183327, 0.00623044, 0.0191373, -0.00566666, 0.00128719, -1.5309, -1.34561, 0)
 
 [node name="Object_2" parent="SubViewportContainer/SubViewport/Sketchfab_Scene2/Sketchfab_model/teapot_obj_cleaner_materialmerger_gles" index="0"]
-surface_material_override/0 = ExtResource("3_bqtlv")
+surface_material_override/0 = ExtResource("6_hj4bq")
 
 [node name="Object_3" parent="SubViewportContainer/SubViewport/Sketchfab_Scene2/Sketchfab_model/teapot_obj_cleaner_materialmerger_gles" index="1"]
 transform = Transform3D(-0.97563, 0.219421, -4.87211e-17, -0.219421, -0.97563, 4.38678e-16, 4.87211e-17, 4.38678e-16, 1, 0, 0, 0)
-surface_material_override/0 = ExtResource("3_bqtlv")
+surface_material_override/0 = ExtResource("6_hj4bq")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.660434, -0.620304, -0.423143, 0, -0.563526, 0.826098, -0.750884, -0.545584, -0.372172, 0, 0, 0)
-light_energy = 1.658
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.878589, 0.987469, -1.13942)
+
+[node name="tree" parent="SubViewportContainer/SubViewport" instance=ExtResource("6_g5e0f")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.40443, 1.12465, 0)
+
+[node name="proto_gemling" parent="SubViewportContainer/SubViewport" instance=ExtResource("7_g5e0f")]
+transform = Transform3D(-0.728681, 0, -1.86253, 0, 2, 0, 1.86253, 0, -0.728681, 0.241894, -1.3819, -0.821899)
+
+[node name="Skeleton3D" parent="SubViewportContainer/SubViewport/proto_gemling/proto_gemling_rig" index="0"]
+bones/0/position = Vector3(0.00932343, 0.0139034, -1.89193e-10)
+bones/0/rotation = Quaternion(-0.195634, 0, 0, 0.980677)
+bones/1/rotation = Quaternion(0.0407439, -0.040594, -0.0016567, 0.998343)
+bones/2/rotation = Quaternion(0.0502497, -0.0457317, -0.00230333, 0.997686)
+bones/3/rotation = Quaternion(-0.021524, 0.0555113, -0.00119695, 0.998225)
+bones/4/rotation = Quaternion(0.1203, 0.0282745, 0.00342772, 0.992329)
+bones/5/rotation = Quaternion(-0.529941, 0.5088, 0.545371, 0.403553)
+bones/6/rotation = Quaternion(-0.102649, 0.587434, -0.497139, 0.630268)
+bones/7/rotation = Quaternion(0.742892, -0.0101033, -0.00717369, 0.669297)
+bones/8/rotation = Quaternion(-0.0235976, -0.00251103, 0.0103955, 0.999664)
+bones/9/position = Vector3(0.0194494, 0.0195932, 0.0412297)
+bones/9/rotation = Quaternion(0.123585, -0.060825, -0.0118101, 0.990398)
+bones/10/rotation = Quaternion(-0.16598, 0.029809, 0.0267119, 0.985317)
+bones/12/position = Vector3(0.00237079, 0.104481, 0.0286092)
+bones/12/rotation = Quaternion(0.000164123, -0.0601385, -0.294161, 0.953862)
+bones/13/rotation = Quaternion(-0.00457281, -0.00781752, -0.207807, 0.978128)
+bones/14/rotation = Quaternion(0.00369788, 0.00602613, -0.312787, 0.949797)
+bones/15/position = Vector3(0.00152108, 0.103579, 0.00833782)
+bones/15/rotation = Quaternion(-0.0266595, -0.054735, -0.211317, 0.97552)
+bones/16/rotation = Quaternion(0.0338636, -0.00348203, -0.266913, 0.963119)
+bones/17/rotation = Quaternion(-0.0255253, -0.00265713, -0.297188, 0.954474)
+bones/18/position = Vector3(0.000305433, 0.101257, -0.01365)
+bones/18/rotation = Quaternion(-0.0134345, -0.0575687, -0.275331, 0.95953)
+bones/19/rotation = Quaternion(0.0150144, -0.00641664, -0.22384, 0.974489)
+bones/20/rotation = Quaternion(-0.0132338, 0.0024805, -0.208273, 0.977978)
+bones/21/position = Vector3(-2.79585e-05, 0.0985552, -0.035618)
+bones/21/rotation = Quaternion(0.0106039, -0.0577359, -0.380463, 0.922931)
+bones/22/rotation = Quaternion(0.0104958, -0.0150828, -0.0780217, 0.996782)
+bones/23/rotation = Quaternion(-0.0220707, -0.0170669, -0.0540362, 0.998149)
+bones/24/rotation = Quaternion(0.529941, 0.5088, 0.545371, -0.403553)
+bones/25/rotation = Quaternion(-0.482067, -0.829033, 0.0995652, 0.265336)
+bones/26/rotation = Quaternion(0.543378, 0.00789135, 0.00955335, 0.839397)
+bones/27/rotation = Quaternion(-0.0235976, 0.00251103, -0.0103955, 0.999664)
+bones/28/position = Vector3(-0.0194494, 0.0195933, 0.0412296)
+bones/28/rotation = Quaternion(0.123585, 0.060825, 0.0118101, 0.990398)
+bones/29/rotation = Quaternion(-0.16598, -0.029809, -0.0267119, 0.985317)
+bones/31/position = Vector3(-0.00237077, 0.104481, 0.0286091)
+bones/31/rotation = Quaternion(0.000164119, 0.0601385, 0.29416, 0.953862)
+bones/32/rotation = Quaternion(-0.00457281, 0.00781752, 0.207807, 0.978128)
+bones/33/rotation = Quaternion(0.00369787, -0.00602613, 0.312787, 0.949797)
+bones/34/position = Vector3(-0.00152106, 0.103579, 0.00833776)
+bones/34/rotation = Quaternion(-0.0266596, 0.054735, 0.211317, 0.97552)
+bones/35/rotation = Quaternion(0.0338636, 0.00348204, 0.266913, 0.963119)
+bones/36/rotation = Quaternion(-0.0255253, 0.00265713, 0.297188, 0.954474)
+bones/37/position = Vector3(-0.00030539, 0.101257, -0.0136501)
+bones/37/rotation = Quaternion(-0.0134345, 0.0575687, 0.275331, 0.95953)
+bones/38/rotation = Quaternion(0.0150144, 0.00641665, 0.223839, 0.974489)
+bones/39/rotation = Quaternion(-0.0132338, -0.0024805, 0.208273, 0.977978)
+bones/40/position = Vector3(2.79579e-05, 0.0985552, -0.0356181)
+bones/40/rotation = Quaternion(0.0106039, 0.057736, 0.380463, 0.922931)
+bones/41/rotation = Quaternion(0.0104958, 0.0150828, 0.0780217, 0.996782)
+bones/42/rotation = Quaternion(-0.0220707, 0.0170669, 0.0540362, 0.998149)
+bones/43/rotation = Quaternion(0.999318, 0.0270483, 0.0127402, 0.0216668)
+bones/44/rotation = Quaternion(-0.0603978, -0.00158694, 0.00619715, 0.998154)
+bones/45/rotation = Quaternion(0.73295, -0.0469895, 0.0175914, -0.67843)
+bones/46/rotation = Quaternion(-0.880391, 0.000740094, -0.090333, 0.465565)
+bones/47/position = Vector3(0.11062, -0.409741, 0.145651)
+bones/47/rotation = Quaternion(-0.995621, -0.0567556, 0.000422576, 0.0742798)
+bones/48/rotation = Quaternion(-0.103336, 0.00183223, -0.00784682, 0.994614)
+bones/49/rotation = Quaternion(0.998914, -0.00707191, 0.0321849, -0.0329421)
+bones/51/position = Vector3(-0.0679997, -0.368872, -0.585787)
+bones/52/position = Vector3(0.147374, -0.368872, -0.585787)
+bones/53/position = Vector3(-0.0581838, -0.849187, 0.517747)
+bones/53/rotation = Quaternion(-0.866833, -0.0437391, -0.0335431, 0.495543)
+bones/54/rotation = Quaternion(0.0436547, -0.000661582, 0.00803069, 0.999014)
+bones/55/rotation = Quaternion(0.983619, 0.0136629, -0.029987, 0.17722)
 
 [editable path="SubViewportContainer/SubViewport/Sketchfab_Scene"]
 [editable path="SubViewportContainer/SubViewport/suzzane"]
 [editable path="SubViewportContainer/SubViewport/Sketchfab_Scene2"]
+[editable path="SubViewportContainer/SubViewport/proto_gemling"]

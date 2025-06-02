@@ -1,9 +1,6 @@
 shader_type spatial;
 render_mode unshaded;
 
-#include "res://shaders/cel_shade.gdshaderinc"
-
-uniform sampler2D GRAYSCALE_TEXTURE : repeat_disable;
 uniform sampler2D DEPTH_TEXTURE : hint_depth_texture, filter_linear_mipmap;
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_nearest;
 uniform sampler2D NORMAL_TEXTURE : hint_normal_roughness_texture, filter_nearest;
@@ -79,9 +76,6 @@ void fragment() {
 	float innerLines = clamp(normal_difference - depth_difference, 0., 1.);
 	
 	ALBEDO = texture(SCREEN_TEXTURE, SCREEN_UV).rgb;
-	
-	float gray_scale = gray_scale(ALBEDO);
-	gray_scale += innerLines * line_highlight;
-	gray_scale -= gray_scale * depth_difference * line_shadow;
-	ALBEDO = cel_shade(ALBEDO, GRAYSCALE_TEXTURE, gray_scale);
+	ALBEDO += innerLines * line_highlight * ALBEDO;
+	ALBEDO -= ALBEDO * depth_difference * line_shadow;
 }
